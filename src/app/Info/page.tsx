@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar/Navbar';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,Suspense } from 'react'
 
 interface MovieData {
   Title: string;
@@ -92,5 +92,10 @@ const Page = () => {
     </>
   );
 }
-
-export default Page;
+export default function InfoPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Page />
+    </Suspense>
+  );
+}
