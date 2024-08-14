@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import { FiSearch } from 'react-icons/fi';
 
 async function fetchMovie(movie: string) {
-  let response = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${movie}`);
+  let response = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${movie}`);
   let data = await response.data;
   return data;
 }

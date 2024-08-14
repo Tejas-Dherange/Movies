@@ -25,7 +25,7 @@ interface MovieData {
 }
 
 async function fetchMovie(movie: string): Promise<MovieData> {
-  const response = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${movie}`);
+  const response = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${movie}`);
   return response.data;
 }
 

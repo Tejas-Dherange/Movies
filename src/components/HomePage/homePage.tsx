@@ -80,7 +80,7 @@ export default function HomePage() {
             try {
                 const fetchedMovies = await Promise.all(
                     movieTitles.map(async (title) => {
-                        const response = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${title}`);
+                        const response = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${title}`);
                         const { Title, Plot, Poster, imdbRating } = response.data;
                         return {
                             title: Title,
