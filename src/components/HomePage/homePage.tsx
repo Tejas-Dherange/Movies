@@ -16,10 +16,10 @@ function CardDemo({ title, description, imgsrc, imdb }: CardDemoProps) {
     return (
         
         <Link href={{ pathname: '/Info', query: {title} }}>
-        <div className="card cursor-pointer bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 flex flex-col   w-80  shadow-md rounded-xl p-4  transform transition-transform duration-300 hover:scale-105">
-            <img src={imgsrc} alt={title} className=" h-[350px] rounded-xl" />
-            <h2 className="text-xl font-bold mt-3"> {title} </h2>
-            <p className="font-semibold flex items-center mt-2 gap-3"> <FaStar className="fill-yellow-500 " /> IMDB Rating: {imdb}</p>
+        <div className="card cursor-pointer bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 flex flex-col  w-[170px] md:w-80 h-full md:h-auto  shadow-md rounded-xl md:p-4 p-2 transform transition-transform duration-300 hover:scale-105 ">
+            <img src={imgsrc} alt={title} className=" md:h-[350px] h-44 rounded-xl" />
+            <h2 className="md:text-xl md:font-bold  font-semibold mt-3 ml-2"> # {title} </h2>
+            <p className="md:font-semibold flex items-center mt-2 gap-3"> <FaStar className="fill-yellow-500 " /> IMDB Rating: {imdb}</p>
         </div>
         </Link>
     );
@@ -29,6 +29,7 @@ function CardDemo({ title, description, imgsrc, imdb }: CardDemoProps) {
 export default function HomePage() {
     const [movies, setMovies] = useState<CardDemoProps[]>([]);
     const movieTitles =[
+        "chandu champion",
         "Like Stars on Earth",
         "Bajrangi Bhaijaan",
         "Runway 34",
@@ -101,8 +102,8 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="flex  flex-col mb-5 items-center min-h-screen">
-                <div className="cards flex flex-wrap justify-center mt-4 gap-8">
+            <div className="flex  flex-col  md:mb-5 mb-10 items-center min-h-screen">
+                <div className="cards flex flex-wrap justify-center mt-4 gap-4 md:gap-8">
                     {movies.length > 0 ? (
                         movies.map((movie, index) => (
                             <CardDemo

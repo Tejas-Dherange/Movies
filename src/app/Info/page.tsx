@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/components/Footer/footer';
 import Navbar from '@/components/Navbar/Navbar';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
@@ -89,6 +90,7 @@ const Page = () => {
           )
         )}
       </div>
+      <Footer/>
     </>
   );
 }

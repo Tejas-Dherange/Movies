@@ -5,6 +5,7 @@ import { CardDemo } from '@/components/Card/card';
 import HomePage from '@/components/HomePage/homePage';
 import Navbar from '@/components/Navbar/Navbar';
 import { FiSearch } from 'react-icons/fi';
+import Footer from '@/components/Footer/footer';
 
 async function fetchMovie(movie: string) {
   let response = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&t=${movie}`);
@@ -51,10 +52,10 @@ export default function Home() {
     <>
       <Navbar />
       <div className="flex flex-col items-center min-h-screen">
-        <main className="flex mt-10 gap-11">
+        <main className="flex mt-10 md:gap-11 gap-5">
           <input
             type="text"
-            className="w-[40vw] p-3 border-black dark:border-white border-x-2 border-y-2 rounded-xl"
+            className="md:w-[40vw] w-[71vw] p-3 border-black dark:border-white border-x-2 border-y-2 rounded-xl"
             placeholder="Enter movie name"
             value={movie}
             onChange={(e) => setMovie(e.target.value)}
@@ -65,7 +66,10 @@ export default function Home() {
             disabled={disabled}
             className="bg-black flex gap-2 items-center font-bold text-xl text-white dark:bg-slate-50 dark:text-black py-3 rounded-xl px-5"
           >
-            <FiSearch /> Search
+            <FiSearch />
+            <span className='md:block hidden'>
+               Search
+            </span>
           </button>
         </main>
         <div className="cards flex flex-wrap justify-center mt-4 gap-6">
@@ -96,6 +100,7 @@ export default function Home() {
             </div>
           </div>
         )}
+      <Footer/>
       </div>
     </>
   );

@@ -11,7 +11,7 @@ const Navbar = () => {
           <img src="image.png" className='h-12 w-48 bg-transparent' alt="dnfhguhiuhr" />
           </div> */}
         <h1 className="text-4xl font-bold">
-          Movies App</h1>
+          Movies </h1>
         </Link>
         
         <ModeToggle />
